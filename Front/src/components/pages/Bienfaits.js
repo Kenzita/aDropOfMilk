@@ -1,9 +1,10 @@
 import React from 'react'
+import BannerBienfaits from '../Banner/BannerBienfaits'
 
 function Bienfaits() {
   return (
     <div>
-      <h1>bienfaits </h1>
+      <BannerBienfaits />
     </div>
   )
 }
