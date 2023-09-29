@@ -1,0 +1,17 @@
+@font-face{
+    font-family: "Halimun";
+    src: url(./fonts/Halimun-W7jn.ttf);
+}
+
+:root {
+    --main: #D1BFAD;
+    --text-color: #433D38;
+    --background-color : #FAECEC;
+    --error: #f5d1c3;
+    --divider: #FFF;
+    --font-family-titre:"Halimun";
+    --font-family-main: "Poppins", sans-serif;
+    --font-family-second: "Montserrat", sans-serif;
+    --box-shadow: 0 6px 9px 0 rgb(0 0 0 / 15%);
+    --box-shadow-nav: rgb(0 0 0 / 22%) 0 2px 18px 0;
+}

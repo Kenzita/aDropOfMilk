@@ -1,0 +1,30 @@
+.btn {
+    padding: .3em 1em;
+    border-radius: 3em;
+    cursor: pointer;
+    font-family: var(--font-family-main);
+    transition: 0.2s opacity;
+    font-size: 1.3em;
+
+    &:hover {
+        transition: 0.2s opacity;
+        opacity: 0.8;
+    }
+
+    &-primary {
+        background-color: var(--divider);
+        color: var(--main);
+        border: 2px solid var(--divider);
+    }
+
+    &-primary-reverse {
+        background-color: var(--main);
+        color: var(--divider);
+        border: 2px solid var(--divider);
+    }
+}
+
+.card {
+    border-radius:3em;
+    background-color: white;
+}

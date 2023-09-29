@@ -1,0 +1,19 @@
+.navbar {
+    padding: 1% 2%;
+    box-shadow: var(--box-shadow-nav);
+    background-color: var(--main);
+    color: var(--divider);
+    font-family: var(--font-family-titre);
+    margin-bottom: 2%;
+    width: 100%;
+
+    img {
+        width: 2em;
+        cursor: pointer;
+    }
+
+    ul {
+        width: 70%;
+
+    }
+}
