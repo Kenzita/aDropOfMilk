@@ -1,12 +1,16 @@
 import React from 'react';
+import BannerRecettes from "../Banner/BannerRecettes"
+import NavBar from '../NavBar/Navbar';
 
 function Recettes() {
     return (
-        <div>
+        <>
+        <BannerRecettes />
+        <NavBar />
 <h1>Recettes
     
 </h1>
-        </div>
+        </>
     );
 }
 
