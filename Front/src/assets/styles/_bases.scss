@@ -49,7 +49,9 @@ img {
 }
 
 .p1 {
-    font-size: 2.3rem;
+    width: 80%;
+    min-width: 10ch;
+    font-size: clamp(1rem, 3vw + 1rem, 2.3rem);
     font-weight: 300;
     color: #FFF;
     font-family: var(--font-family-second);
@@ -57,7 +59,6 @@ img {
 }
 
 .p2 {
-    font-size: 2, 1875rem;
     font-weight: 600;
     text-align: center;
 
@@ -84,4 +85,8 @@ input{
         font-style: italic;
         font-size: 1.2em;
 }
+}
+
+h1{
+    color: var(--main);
 }

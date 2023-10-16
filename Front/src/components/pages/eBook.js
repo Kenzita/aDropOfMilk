@@ -1,11 +1,16 @@
 import React from 'react';
+import BannerEBook from '../Banner/BannerEBook';
+import Navbar from '../NavBar/Navbar';
 
-function eBook() {
+
+function EBook() {
     return (
-        <div>
+        <>
+            <BannerEBook />
+            <Navbar />
             <h1> eBook </h1>
-        </div>
+        </>
     );
 }
 
-export default eBook;
+export default EBook;

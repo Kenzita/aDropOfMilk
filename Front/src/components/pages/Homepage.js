@@ -1,6 +1,6 @@
 import CookieConsent from "react-cookie-consent";
 import Banner from "../Banner/Banner";
-import NavBar from "../NavBar/Navbar"
+import Navbar from "../NavBar/Navbar"
 
 
 function Homepage() {
@@ -23,7 +23,7 @@ function Homepage() {
             overlay>
                 🍪 Ce site Web utilise des cookies pour améliorer l'expérience utilisateur 🍪 </CookieConsent>
                 <Banner />
-                <NavBar />
+                <Navbar />
 
    <h1>Homepage </h1>
         </div >

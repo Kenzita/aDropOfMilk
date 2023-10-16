@@ -3,12 +3,15 @@ import styles from './Register.module.scss';
 import * as yup from "yup";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
-
+import Banner from '../Banner/Banner';
+import Navbar from '../NavBar/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 function Register({ seeLoginForm, toggleUnRegister }) {
     const [feedback, setFeedback] = useState("");
     const [feedbackGood, setFeedbackGood] = useState("");
     const [isSubmitted, setIsSubmitted] = useState(false);
+    const navigate = useNavigate();
 
     const yupSchema = yup.object({
         username: yup.string()
@@ -67,8 +70,9 @@ function Register({ seeLoginForm, toggleUnRegister }) {
             } else {
                 setFeedbackGood(newUser.messageGood);
                 reset(defaultValues);
+                setFeedback(null)
                 setTimeout(() => {
-                    seeLoginForm();
+                    navigate('/connexion');
                 }, 3000);
             }
         }
@@ -76,39 +80,50 @@ function Register({ seeLoginForm, toggleUnRegister }) {
     };
 
     return (
-        <div className='"flex-fill d-flex flex-column justify-content-center align-items-center m30'>
-            <form onSubmit={handleSubmit(submit)}>
-                <div className="d-flex flex-column mt20 mb10">
-                    <label htmlFor="username" className="mb10"> Nom d'utilisateur </label>
-                    <input type="text" placeholder='Choisissez votre nom utilisateur' id="username" {...register("username")} />
-                    {errors?.username && (<p className={`${styles.feedback}`} >{errors.username.message}</p>)}
-                </div>
+        <>
+            <Banner />
+            <Navbar />
+            <div className='flex-fill d-flex flex-column justify-content-center align-items-center m30'>
 
-                <div className="d-flex flex-column mb10">
-                    <label htmlFor="email" className=" mt20 mb10"> Adresse email</label>
-                    <input type="text" placeholder='Renseignez votre adresse email ' id="email" {...register("email")} />
-                    {errors?.email && (<p className={`${styles.feedback}`} >{errors.email.message}</p>)}
-                </div>
+                <h1 className='mb50'>Inscription</h1>
+                <form className='d-flex flex-column align-items-center' onSubmit={handleSubmit(submit)}>
+
+                    <div className={`mb20  d-flex flex-column align-items-center ${styles.container}`}>
+
+                        <div className={`mb20 ${styles.input_group}`}>
+                            <input required type="text" name="username" className={`${styles.input}`} id="username" {...register("username")} />
+                            <label className={`${styles.user_label}`}>Nom d'Utilisateur</label>
+                            {errors?.username && (<p className={`${styles.feedback}`} >{errors.username.message}</p>)}
+                        </div>
 
 
-                <div className="d-flex flex-column mb10">
-                    <label htmlFor="password" className="mt20 mb10"> Mot de passe</label>
-                    <input type="password" placeholder='Choisissez votre mot de passe' id="password" {...register("password")} />
-                    {errors?.password && (<p className={`${styles.feedback}`} >{errors.password.message}</p>)}
-                </div>
 
-                <div className="d-flex flex-column mb10">
-                    <label htmlFor="confirmPassword" className="mt20 mb10"> Confirmer votre mot de passe</label>
-                    <input type="password" placeholder='Comfirmez votre mot de passe ' id="confirmPassword" {...register("confirmPassword")} />
-                    {errors?.confirmPassword && (<p className={`${styles.feedback}`} >{errors.confirmPassword.message}</p>)}
-                </div>
+                        <div className={`mb20 ${styles.input_group}`}>
+                            <input type="email" required className={`${styles.input}`} id="email" {...register("email")} />
+                            <label htmlFor="email" className={`${styles.user_label}`}> Adresse email</label>
+                            {errors?.email && (<p className={`${styles.feedback}`} >{errors.email.message}</p>)}
+                        </div>
 
-                {feedback && <p className={`${styles.feedback} mb20`}>{feedback} </p>}
-                {feedbackGood && <p className={`${styles.feedbackGood} mb20`}>{feedbackGood} </p>}
 
-                <button className="btn btn-primary-reverse mt20" disabled={isSubmitted}>  Valider mon inscription </button>
-            </form>
-        </div>
+                        <div className={`mb20 ${styles.input_group}`}>
+                            <input type="password" required id="password" className={`${styles.input}`} {...register("password")} />
+                            <label htmlFor="password" className={`${styles.user_label}`}> Mot de passe</label>
+                            {errors?.password && (<p className={`${styles.feedback}`} >{errors.password.message}</p>)}
+                        </div>
+
+                        <div className={`mb20 ${styles.input_group}`}>
+                            <input type="password" required id="confirmPassword" className={`${styles.input}`} {...register("confirmPassword")} />
+                            <label htmlFor="confirmPassword" className={`${styles.user_label}`}> Confirmer votre mot de passe</label>
+                            {errors?.confirmPassword && (<p className={`${styles.feedback}`} >{errors.confirmPassword.message}</p>)}
+                        </div>
+                    </div>
+                    {feedback && <p className={`${styles.feedback} mb20`}>{feedback} </p>}
+                    {feedbackGood && <p className={`${styles.feedbackGood} mb20`}>{feedbackGood} </p>}
+
+                    <button className={`btn btn-primary-reverse mt20 ${styles.btn}`} disabled={isSubmitted}> S'inscrire </button>
+                </form>
+            </div>
+        </>
     );
 }
 

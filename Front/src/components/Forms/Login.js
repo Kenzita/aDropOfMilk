@@ -4,6 +4,8 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import styles from "./Login.module.scss";
 import { Link } from 'react-router-dom';
+import Banner from '../Banner/Banner';
+import Navbar from '../NavBar/Navbar';
 
 function Login({ seeHomepage }) {
     const [user, setUser] = useState();
@@ -73,31 +75,38 @@ function Login({ seeHomepage }) {
     };
 
     return (
-        <div className='"flex-fill d-flex flex-column justify-content-center align-items-center card m30'>
-            <form onSubmit={handleSubmit(submit)}>
+        <>
+            <Banner />
+            <Navbar />
+            <div className='"flex-fill d-flex flex-column justify-content-center align-items-center card m30'>
 
-                <div className="d-flex flex-column mb20">
-                    <label htmlFor="email" className="mb10">
-                        Adresse email</label>
-                    <input type="text" placeholder='Votre Email' id="email" {...register("email")} />
-                    {errors?.email && (<p className={`${styles.feedback}`} >{errors.email.message}</p>)}
-                </div>
+                <h1 className='mb50'>Connexion</h1>
+                <form className='d-flex flex-column align-items-center' onSubmit={handleSubmit(submit)}>
 
+                    <div className={`mb20  d-flex flex-column align-items-center ${styles.container}`}>
 
-                <div className="d-flex flex-column mb20">
-                    <label htmlFor="password" className="mb10"> Mot de Passe</label>
-                    <input type="password" placeholder='Mot de passe' id="password" {...register("password")} />
-                    {errors?.password && (<p className={`${styles.feedback}`} >{errors.password.message}</p>)}
-                </div>
-
-
-                {feedback && <p className={`${styles.feedback} mb20`}>{feedback} </p>}
-                {feedbackGood && <p className={`${styles.feedbackGood} mb20`}>{feedbackGood} </p>}
+                        <div className={`mb20 ${styles.input_group}`}>
+                            <input type="email" required className={`${styles.input}`} id="email" {...register("email")} />
+                            <label htmlFor="email" className={`${styles.user_label}`}> Adresse email</label>
+                            {errors?.email && (<p className={`${styles.feedback}`} >{errors.email.message}</p>)}
+                        </div>
 
 
-                <button className="btn btn-primary-reverse mt20" disabled={isSubmitted}>  Me connecter </button>
-            </form>
-        </div>
+                        <div className={`mb20 ${styles.input_group}`}>
+                            <input type="password" required id="password" className={`${styles.input}`} {...register("password")} />
+                            <label htmlFor="password" className={`${styles.user_label}`}> Mot de passe</label>
+                            {errors?.password && (<p className={`${styles.feedback}`} >{errors.password.message}</p>)}
+                        </div>
+                    </div>
+
+                    {feedback && <p className={`${styles.feedback} mb20`}>{feedback} </p>}
+                    {feedbackGood && <p className={`${styles.feedbackGood} mb20`}>{feedbackGood} </p>}
+
+
+                    <button className={`btn btn-primary-reverse mt20 ${styles.btn}`} disabled={isSubmitted}>  Me connecter </button>
+                </form>
+            </div>
+        </>
     );
 }
 

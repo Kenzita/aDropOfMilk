@@ -1,14 +1,11 @@
 import Banner from "../Banner/Banner"
 import NavBar from "../NavBar/Navbar"
 
-function Header({seeLoginForm, seeRegisterForm, seeHomepage, seeProfile, user, logout}) {
+function Header({user, logout}) {
     return (
         <>
-    <Banner  seeLoginForm={seeLoginForm}
-                seeRegisterForm={seeRegisterForm}
-                seeHomepage={seeHomepage}
+    <Banner
                 user={user}
-                seeProfile={seeProfile}
                 logout={logout}/>
     <NavBar />
         </>

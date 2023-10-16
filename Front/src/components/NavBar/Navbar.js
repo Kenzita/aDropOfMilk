@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./Navbar.module.scss";
 import logo from "../../assets/images/logos/logo_gouttte.png";
 import { Link } from 'react-router-dom';
+import MobileMenu from './MobileMenu';
 
-function Navbar({ seeLoginForm, seeRegisterForm, seeHomepage, seeProfile, user, logout }) {
+function Navbar({ user, logout }) {
+  const [showMenu, setShowMenu] = useState(false);
 
   return (
+    <>
     <div className={`d-flex  justify-content-between align-items-center ${styles.navbar} `}>
       <Link to='/'> <img
-        onClick={seeHomepage}
         src={logo}
         alt="goutte de lait" /></Link>
+<div className={styles.desktopHeader}>
       <ul className='d-flex justify-content-around '>
         <li>
           <Link to="/Bienfaits" > Bienfaits</Link>
@@ -22,7 +25,7 @@ function Navbar({ seeLoginForm, seeRegisterForm, seeHomepage, seeProfile, user, 
           <Link to="/eBook">E-Books</Link>
         </li>
       </ul>
-
+      </div>
       <div>
         {
           user ? (
@@ -33,27 +36,35 @@ function Navbar({ seeLoginForm, seeRegisterForm, seeHomepage, seeProfile, user, 
             </button>
 
               <button
-                onClick={seeProfile}
                 className={`mr10 btn btn-primary-reverse`}>
-                <i className=" fas fa-right-to-bracket mr5"></i>
                 <Link to="/Profile">Profil</Link>
               </button>
             </>
           ) : (
             <><Link to="/inscription"> <button
-              onClick={seeRegisterForm}
               className={`mr10 btn btn-primary`}>
               <span>Inscription</span> </button> </Link>
               <Link to="/connexion">
-              <button
-                onClick={seeLoginForm}
-                className={`mr10 btn btn-primary-reverse`}>  <i className=" fas fa-right-to-bracket mr5"></i>
-                <span>Connexion</span> </button>
+                <button
+                  className={`mr10 btn btn-primary-reverse`}> 
+                  <span>Connexion</span> </button>
               </Link>
-           </>)
+            </>)
         }
       </div>
-    </div>
+     
+      </div>
+      <i
+                onClick={() => setShowMenu(true)}
+                className={`fas fa-bars mr10 ${styles.mobileHeader}`} ></i>
+            {showMenu && (
+                <>
+                <div onClick={() => setShowMenu(false)} className="calc"> </div>
+                <MobileMenu/>
+                </>
+    )
+}
+    </>
   );
 }
 

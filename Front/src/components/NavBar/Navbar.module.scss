@@ -1,3 +1,5 @@
+@use "../../assets/styles/mixin" as mixin;
+
 .navbar {
     padding: 1% 2%;
     box-shadow: var(--box-shadow-nav);
@@ -15,5 +17,20 @@
     ul {
         width: 70%;
 
+    }
+}
+
+
+.mobileHeader{
+    display: none;
+}
+
+@include mixin.xs{
+    .mobileHeader{
+        display: block;
+    }
+
+    .desktopHeader{
+        display: none;
     }
 }

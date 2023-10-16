@@ -57,6 +57,8 @@ router.post("/addUser", async (req, res) => {
                 resultBack.id = result.insertId;
                 res.json(resultBack);
             });
+            let isEmail= {messageGood: "Inscription réussie, vous allez être redirigé(e)"}
+            res.send(isEmail)
         }
     });
 } catch (error) {
