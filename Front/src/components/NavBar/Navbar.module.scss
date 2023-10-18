@@ -8,6 +8,7 @@
     font-family: var(--font-family-titre);
     margin-bottom: 2%;
     width: 100%;
+    height: 9.5vh;
 
     img {
         width: 2.5em;
@@ -23,8 +24,19 @@ font-size: 3.7em;
     
     
         }
-    
+div{
+
+    .navlink{
+        padding-top: 40%;
+        i{
+            box-sizing: border-box;
+        }
+
+    }
 }
+        
+    }
+
 
 
 .mobileHeader {

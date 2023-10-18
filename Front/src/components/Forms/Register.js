@@ -69,7 +69,7 @@ function Register() {
             } else {
                 setFeedbackGood(newUser.messageGood);
                 reset(defaultValues);
-                setFeedback(null)
+                setFeedback(null);
                 setTimeout(() => {
                     navigate('connexion');
                 }, 3000);
@@ -80,9 +80,9 @@ function Register() {
 
     return (
         <>
-            <div className='flex-fill d-flex flex-column justify-content-center align-items-center m30'>
+            <div className='flex-fill d-flex flex-column justify-content-center align-items-center card p30 mx50'>
 
-              
+
                 <form className='d-flex flex-column align-items-center' onSubmit={handleSubmit(submit)}>
 
                     <div className={`mb20  d-flex flex-column align-items-center ${styles.container}`}>
@@ -116,8 +116,8 @@ function Register() {
                     </div>
 
                     <p>
-                    Vous avez déja un compte
-                    <NavLink to="connexion" className={`${styles.lien}`}> Connectez-vous </NavLink></p> 
+                        Vous avez déja un compte
+                        <NavLink to="connexion" className={`${styles.lien}`}> Connectez-vous </NavLink></p>
 
 
                     {feedback && <p className={`${styles.feedback} mb20`}>{feedback} </p>}

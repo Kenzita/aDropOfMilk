@@ -7,10 +7,10 @@ import Banner from '../Banner/Banner';
 
 function Profile() {
     return (
-        <div>
-            <Banner />
+        <div className={`${styles.container} `} >
+            {/* <Banner /> */}
             <Navbar />
-            <div className={`d-flex justify-content-center align-items-center ${styles.titre}`}>
+            <div className={`d-flex justify-content-around align-items-center ${styles.titre} my60`}>
                 <NavLink end to=""> <button
                     className={`mr10 btn btn-primary`}>
                     <span>Inscription</span> </button> </NavLink> 

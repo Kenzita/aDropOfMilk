@@ -51,7 +51,7 @@ function Navbar({ user, logout }) {
               </NavLink>
             </>)
         } */}
-<NavLink to="/profile">
+<NavLink to="/profile" className={`${styles.navlink}`}>
           <i className="fa-solid fa-person-breastfeeding"></i>
           </NavLink>
         </div>

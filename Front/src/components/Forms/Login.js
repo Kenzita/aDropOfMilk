@@ -75,7 +75,7 @@ function Login() {
 
     return (
         <>
-            <div className='"flex-fill d-flex flex-column justify-content-center align-items-center card m30'>
+            <div className='"flex-fill d-flex flex-column justify-content-center align-items-center card p30 mx50'>
 
 
                 <form className='d-flex flex-column align-items-center' onSubmit={handleSubmit(submit)}>

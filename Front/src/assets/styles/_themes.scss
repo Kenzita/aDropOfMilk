@@ -14,58 +14,83 @@
     border: none;
     font-weight: 500;
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
 
-.btn:active {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
+    .btn:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
 
-.btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
+    .btn::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
 
-.btn::after {
-    background-color: #fff;
-}
+    .btn::after {
+        background-color: #fff;
+    }
 
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6);
-    opacity: 0;
-}
+    .btn:hover::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+    }
 
 
-&:hover {
-    transition: 0.2s opacity;
-    opacity: 0.8;
-}
+    &:hover {
+        transition: 0.2s opacity;
+        opacity: 0.8;
+    }
 
-&-primary {
-    background-color: var(--divider);
-    color: var(--main);
-    border: 2px solid var(--divider);
-}
+    &-primary {
+        background-color: var(--divider);
+        color: var(--main);
+        border: 2px solid var(--divider);
+    }
 
-&-primary-reverse {
-    background-color: var(--main);
-    color: var(--divider);
-    border: 2px solid var(--divider);
-}
+    &-primary-reverse {
+        background-color: var(--main);
+        color: var(--divider);
+        border: 2px solid var(--divider);
+    }
 }
 
 .card {
     border-radius: 3em;
-    background-color: white;
+    background-color: #fff;
+}
+
+form {
+    border: 1px solid var(--main);
+    padding: 3%;
+    border-radius: 3em;
+}
+
+.active {
+    border-bottom: solid 2px white;
+    border-top: solid 2px white;
+    padding-bottom: .5em;
+    padding-top: .5em;
+    padding-left: 2em;
+    padding-right: 2em;
+
+    .btn {
+        font-weight: 600;
+        padding: 10%;
+        color: #FFF;
+        margin: 2%;
+        background-color: var(--main);
+
+
+    }
 }
