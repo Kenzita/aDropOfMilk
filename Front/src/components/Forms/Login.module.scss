@@ -61,3 +61,10 @@ input:valid~label {
 input:invalid:focus{
     border: solid 2px var(--error);
 }
+
+p{
+    .lien{
+        color : var(--main);
+        font-style: italic;
+}
+}

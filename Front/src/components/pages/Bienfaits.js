@@ -8,6 +8,8 @@ function Bienfaits() {
     <div>
       <BannerBienfaits />
                 <Navbar />
+
+                <h1>Bienfaits</h1>
     </div>
   )
 }

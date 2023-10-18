@@ -1,6 +1,5 @@
 import styles from "./App.module.scss";
-import { useState } from "react";
-import Layout from "./Layout/Layout";
+import { Outlet } from "react-router-dom";
 
 
 function App() {
@@ -16,7 +15,8 @@ function App() {
 
     return (
         <div className={`d-flex flex-column  ${styles.appContainer}`}>
-            <Layout />
+            
+            <Outlet />
         </div>
     );
 }

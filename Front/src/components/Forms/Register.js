@@ -3,11 +3,10 @@ import styles from './Register.module.scss';
 import * as yup from "yup";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
-import Banner from '../Banner/Banner';
-import Navbar from '../NavBar/Navbar';
+import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-function Register({ seeLoginForm, toggleUnRegister }) {
+function Register() {
     const [feedback, setFeedback] = useState("");
     const [feedbackGood, setFeedbackGood] = useState("");
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -72,7 +71,7 @@ function Register({ seeLoginForm, toggleUnRegister }) {
                 reset(defaultValues);
                 setFeedback(null)
                 setTimeout(() => {
-                    navigate('/connexion');
+                    navigate('connexion');
                 }, 3000);
             }
         }
@@ -81,11 +80,9 @@ function Register({ seeLoginForm, toggleUnRegister }) {
 
     return (
         <>
-            <Banner />
-            <Navbar />
             <div className='flex-fill d-flex flex-column justify-content-center align-items-center m30'>
 
-                <h1 className='mb50'>Inscription</h1>
+              
                 <form className='d-flex flex-column align-items-center' onSubmit={handleSubmit(submit)}>
 
                     <div className={`mb20  d-flex flex-column align-items-center ${styles.container}`}>
@@ -117,6 +114,12 @@ function Register({ seeLoginForm, toggleUnRegister }) {
                             {errors?.confirmPassword && (<p className={`${styles.feedback}`} >{errors.confirmPassword.message}</p>)}
                         </div>
                     </div>
+
+                    <p>
+                    Vous avez déja un compte
+                    <NavLink to="connexion" className={`${styles.lien}`}> Connectez-vous </NavLink></p> 
+
+
                     {feedback && <p className={`${styles.feedback} mb20`}>{feedback} </p>}
                     {feedbackGood && <p className={`${styles.feedbackGood} mb20`}>{feedbackGood} </p>}
 
