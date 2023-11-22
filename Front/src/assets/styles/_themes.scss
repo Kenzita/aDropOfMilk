@@ -77,8 +77,8 @@ form {
 }
 
 .active {
-    border-bottom: solid 2px white;
-    border-top: solid 2px white;
+    // border-bottom: solid 2px white;
+    // border-top: solid 2px white;
     padding-bottom: .5em;
     padding-top: .5em;
     padding-left: 2em;
@@ -90,7 +90,5 @@ form {
         color: #FFF;
         margin: 2%;
         background-color: var(--main);
-
-
     }
 }
