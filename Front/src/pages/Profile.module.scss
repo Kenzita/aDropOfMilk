@@ -1,0 +1,17 @@
+.titre {
+    padding: 1% 2%;
+    color: var(--divider);
+    font-family: var(--font-family-titre);
+    width: 50%;
+    margin-bottom: 2%;
+    margin: 0 auto;
+}
+
+.container {
+    background: linear-gradient(180deg, #6f6a65a0 0%, rgba(255, 255, 255, 0.00) 96.64%), url(../../src/assets/images/profile/profileBG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 88vh;
+
+}

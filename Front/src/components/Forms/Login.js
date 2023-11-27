@@ -1,19 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import styles from "./Login.module.scss";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { UserContext } from "../../context";
 
 function Login() {
-    const [user, setUser] = useState();
     const [feedback, setFeedback] = useState("");
     const [feedbackGood, setFeedbackGood] = useState("");
-
-    const getUser = (userLogged) => {
-        setUser(userLogged);
-    };
+    const { setUser } = useContext(UserContext);
+    const navigate = useNavigate();
 
     const yupSchema = yup.object({
         email: yup.string()
@@ -32,7 +30,7 @@ function Login() {
     const { register,
         handleSubmit,
         reset,
-        formState: { errors, isSubmitted }
+        formState: { errors }
     } = useForm({
         defaultValues,
         mode: "onChange",
@@ -52,7 +50,7 @@ function Login() {
         });
         if (response.ok) {
             const newUser = await response.json();
-            console.log("newUser", newUser);
+            console.log(newUser);
             if (newUser.message) {
                 setFeedback(newUser.message);
             }
@@ -60,14 +58,9 @@ function Login() {
                 setFeedbackGood("Connexion réussie, vous allez être redirigé");
                 reset(defaultValues);
                 console.log("User recupéré", newUser);
-                let user = {};
-                user.username = newUser.username;
-                user.email = newUser.email;
-                console.log("user modifié", user);
-                reset(defaultValues);
+                setUser(newUser);
                 setTimeout(() => {
-                    getUser(user);
-                    <Link to="/"></Link>;
+                    navigate("/");
                 }, 3000);
             }
         }
@@ -75,8 +68,7 @@ function Login() {
 
     return (
         <>
-            <div className='"flex-fill d-flex flex-column justify-content-center align-items-center card p30 mx50'>
-
+            <div className='" d-flex flex-column justify-content-center align-items-center  p30 mx50'>
 
                 <form className='d-flex flex-column align-items-center' onSubmit={handleSubmit(submit)}>
 
@@ -98,13 +90,13 @@ function Login() {
 
                     <p>
                         Pas encore de compte ?
-                    <NavLink to="/profile" className={`${styles.lien}`}> Inscrivez-vous </NavLink></p> 
+                        <NavLink to="/profile" className={`${styles.lien}`}> Inscrivez-vous </NavLink></p>
 
                     {feedback && <p className={`${styles.feedback} mb20`}>{feedback} </p>}
                     {feedbackGood && <p className={`${styles.feedbackGood} mb20`}>{feedbackGood} </p>}
 
 
-                    <button className={`btn btn-primary-reverse mt20 ${styles.btn}`} disabled={isSubmitted}>  Me connecter </button>
+                    <button className={`btn btn-primary-reverse mt20 ${styles.btn}`} >  Me connecter </button>
                 </form>
             </div>
         </>

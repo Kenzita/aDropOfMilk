@@ -57,7 +57,7 @@ function Navbar({ user, logout }) {
         </div>
 
       </div>
-      <i
+      {/* <i
         onClick={() => setShowMenu(true)}
         className={`fas fa-bars mr10 ${styles.mobileHeader}`} ></i>
       {showMenu && (
@@ -66,7 +66,7 @@ function Navbar({ user, logout }) {
           <MobileMenu />
         </>
       )
-      }
+      } */}
     </>
   );
 }

@@ -1,4 +1,4 @@
-@font-face{
+@font-face {
     font-family: "Halimun";
     src: url(./fonts/Halimun-W7jn.ttf);
 }
@@ -16,7 +16,7 @@ body {
     background-color: var(--light-grey);
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--divider);
 }
@@ -33,16 +33,28 @@ ul {
     padding-left: 0;
     margin: 0;
 
-    li{
-    
+    li {
         color: var(--divider);
         font-family: var(--font-family-main);
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         font-style: normal;
-        font-weight: 400; 
+        font-weight: 400;
     }
 }
 
+header {
+    margin-top: 3%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+
+
+    img {
+        margin-top: 15%;
+        width: 45ch;
+    }
+}
 
 img {
     max-width: 100%;
@@ -50,8 +62,8 @@ img {
 
 .p1 {
     width: 80%;
-    min-width: 10ch;
-    font-size: clamp(1rem, 3vw + 1rem, 2.3rem);
+    min-width: 5ch;
+    font-size: clamp(.5rem, 3vw + .5rem, 1.3rem);
     font-weight: 300;
     color: #FFF;
     font-family: var(--font-family-second);
@@ -64,30 +76,31 @@ img {
 
 }
 
-form{
+form {
     width: 50%;
 }
 
-label{
+label {
     font-size: 1.1em;
     font-style: italic;
     color: var(--text-color);
     font-family: var(--font-family-second);
     font-weight: 300;
 }
-input{
+
+input {
     border: solid 1px var(--text-color);
     padding: 2% 3%;
     border-radius: 1em;
     background-color: #FFF;
 
 
-    &::placeholder{
+    &::placeholder {
         font-style: italic;
         font-size: 1.2em;
-}
+    }
 }
 
-h1{
+h1 {
     color: var(--main);
 }

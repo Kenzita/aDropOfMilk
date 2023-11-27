@@ -12,6 +12,7 @@ function Register() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const navigate = useNavigate();
 
+
     const yupSchema = yup.object({
         username: yup.string()
             .required("Le champ doit contenir au minimum 2 caractères ")
@@ -37,6 +38,7 @@ function Register() {
         password: "",
         confirmPassword: "",
         email: "",
+        avatar: ""
     };
 
     const { register,
@@ -80,7 +82,7 @@ function Register() {
 
     return (
         <>
-            <div className='flex-fill d-flex flex-column justify-content-center align-items-center card p30 mx50'>
+            <div className='flex-fill d-flex flex-column justify-content-center align-items-center  p30 mx50'>
 
 
                 <form className='d-flex flex-column align-items-center' onSubmit={handleSubmit(submit)}>

@@ -1,0 +1,53 @@
+section {
+    width: 100%;
+
+    img {
+        width: 20%;
+        min-width: 255px;
+    }
+}
+
+.introArticle {
+    margin-top: 7%;
+    margin-bottom: 3%;
+
+    p {
+        min-width: 250px;
+        width: 50%;
+        margin-right: 3%;
+        font-size: 1.3em;
+    }
+
+}
+
+.bebeSection {
+    // background-color: var(--section);
+    padding: 3%;
+
+    h2 {
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--main);
+    }
+
+}
+
+.bebe {
+    padding: 2%;
+    img{
+        margin-top: 3%;
+    }
+}
+
+.bienfaitsArticle {
+    margin-top: 7%;
+    margin-bottom: 3%;
+
+    .bienfaitsTexte {
+        min-width: 250px;
+        width: 40%;
+        margin-left: 3%;
+        font-size: 1.3em;
+    }
+
+}

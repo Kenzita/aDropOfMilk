@@ -2,11 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import Login from "./components/Forms/Login";
 import Register from "./components/Forms/Register";
-import Bienfaits from "./components/pages/Bienfaits";
-import EBook from "./components/pages/EBook";
-import Homepage from "./components/pages/Homepage";
-import Profile from "./components/pages/Profile";
-import Recettes from "./components/pages/Recettes";
+import Bienfaits from "./pages/Bienfaits";
+import EBook from "./pages/EBook";
+import Homepage from "./pages/Homepage";
+import Profile from "./pages/Profile";
+import Recettes from "./pages/Recettes";
 
 export const router = createBrowserRouter([
     {
