@@ -11,11 +11,11 @@ function Profile() {
             <div className={`d-flex justify-content-around align-items-center ${styles.titre} my60`}>
                 <NavLink end to=""> <button
                     className={`mr10 btn btn-primary`}>
-                    <span>Inscription</span> </button> </NavLink>
+                    Inscription</button> </NavLink>
                 <NavLink to="connexion">
                     <button
                         className={`mr10 btn btn-primary`}>
-                        <span>Connexion</span> </button>
+                        Connexion </button>
                 </NavLink>
             </div>
             <Outlet />

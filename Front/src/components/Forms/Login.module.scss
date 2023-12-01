@@ -1,3 +1,5 @@
+@use "../../assets/styles/mixin" as mixin;
+
 .feedback {
     color: var(--error);
     font-size: 18px;
@@ -11,64 +13,100 @@
 }
 
 
-.btn{
-    width: 50%;
-}
+div {
 
-form{
-    background-color: #FFF;
-}
-.container{
-    width: 100%;
-}
 
-.input_group {
-    position: relative;
-    width: 80%;
-}
+    form {
+        background-color: #FFF;
+        width: 60vw;
 
-.input {
-    border: solid 1.5px #9e9e9e;
-    border-radius: 1rem;
-    background: none;
-    width: 100%;
-    padding: 1rem;
-    font-size: 1rem;
-    color: var(--text-color);
-    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.user_label {
-    position: absolute;
-    left: 15px;
-    color: var(--text-color);
-    pointer-events: none;
-    transform: translateY(1rem);
-    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #FFF;
-}
+    }
 
-.input:focus,
-input:valid {
-    outline: none;
-    border: 1.5px solid var(--main);
-}
+    .container {
+        width: 100%;
+    }
 
-.input:focus~label,
-input:valid~label {
-    transform: translateY(-50%) scale(0.8);
-    background-color: #FFF;
-    padding: 0 .2em;
-    color: var(--text-color);
-}
+    .input_group {
+        position: relative;
+        width: 80%;
+    }
 
-input:invalid:focus{
-    border: solid 2px var(--error);
-}
+    .input {
+        border: solid 1.5px #9e9e9e;
+        border-radius: 1rem;
+        background: none;
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+        color: var(--text-color);
+        transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-p{
-    .lien{
-        color : var(--main);
-        font-style: italic;
-}
+    .user_label {
+        position: absolute;
+        left: 15px;
+        color: var(--text-color);
+        pointer-events: none;
+        transform: translateY(1rem);
+        transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: #FFF;
+    }
+
+    .input:focus,
+    input:valid {
+        outline: none;
+        border: 1.5px solid var(--main);
+    }
+
+    .input:focus~label,
+    input:valid~label {
+        transform: translateY(-50%) scale(0.8);
+        background-color: #FFF;
+        padding: 0 .2em;
+        color: var(--text-color);
+    }
+
+    input:invalid:focus {
+        border: solid 2px var(--error);
+    }
+
+    p {
+        .lien {
+            color: var(--main);
+            font-style: italic;
+        }
+    }
+
+    @include mixin.sm {
+
+        form {
+            width: 75vw;
+            padding: 25%;
+
+
+            .user_label {
+                font-size: 1.1em;
+            }
+
+            .input_group {
+                width: 100%;
+            }
+
+        }
+    }
+
+    @include mixin.xs {
+
+        form {
+            width: 95vw;
+            padding: 25%;
+
+            .user_label {
+                font-size: .9em;
+            }
+
+
+        }
+    }
 }

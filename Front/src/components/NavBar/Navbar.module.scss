@@ -2,16 +2,21 @@
 
 .navbar {
     padding: 1% 2%;
-    color: var(--divider);
+    color: #FFF;
     font-family: var(--font-family-titre);
     width: 100%;
     height: 6vh;
     font-size: 1vw;
-  background-color: var(--main);
-  position: fixed;
+
+    background-color: var(--main);
+    //   position: fixed;
+
+    @include mixin.xs {
+        display: none;
+    }
 
     img {
-        width: 1.3em;
+        width: clamp(1rem, 3vw + 1rem, 1.5rem); 
         cursor: pointer;
     }
 
@@ -22,7 +27,6 @@
     ul {
         width: 60%;
 
-
     }
 
     div {
@@ -31,6 +35,7 @@
             padding-top: 30%;
 
             i {
+                font-size: clamp(1.5rem, 3vw + 1.5rem, 2rem);
                 box-sizing: border-box;
             }
 
@@ -39,18 +44,71 @@
 
 }
 
+.menuBurger {
+    display: none;
+
+    @include mixin.xs {
+        display: inline-block;
+        font-size: 1.5em;
+        text-align: center;
+        color: var(--text);
+
+        i {
+            position: fixed;
+            right: 2%;
+            top:1%;
+        }
+
+    }
+
+    .menuB {
+        padding: 1% 2%;
+        color: #FFF;
+        font-family: var(--font-family-titre);
+        width: 100%;
+        height: 6vh;
+        font-size: 1vw;
+        background-color: #65594cdf;
+        height: 100vh;
+        position: fixed;
+        z-index: 1000;
 
 
-// .mobileHeader {
-//     display: none;
-// }
 
-// @include mixin.xs {
-//     .mobileHeader {
-//         display: block;
-//     }
 
-//     .desktopHeader {
-//         display: none;
-//     }
-// }
+        img {
+            width: 1.3em;
+            cursor: pointer;
+        }
+
+        i {
+            font-size: 2.2em;
+        }
+
+        ul {
+            width: 60%;
+        }
+
+        li {
+            a {
+                font-weight: bolder;
+                color: #FFF;
+                font-size: 1.2em;
+            }
+        }
+
+        div {
+
+            .navlink {
+                padding-top: 30%;
+
+                i {
+                    box-sizing: border-box;
+                }
+
+            }
+        }
+
+    }
+
+}

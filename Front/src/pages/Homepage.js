@@ -7,6 +7,7 @@ import bebe3 from "../assets/images/accueil/bebe3.png";
 import intro from "../assets/images/accueil/introImage.png";
 import bienfaits from "../assets/images/accueil/bienfaits.png";
 import { NavLink } from "react-router-dom";
+import Carrousel from "../components/Carrousel/Carrousel";
 
 
 function Homepage() {
@@ -36,7 +37,7 @@ function Homepage() {
 
             </div >
             <main className="d-flex flex-column align-items-center justify-content-center">
-                <section className={`${styles.intro}  mb20`}>
+                <section className={`${styles.intro}  `}>
                     <article className={`${styles.introArticle} d-flex flex-wrap justify-content-center align-items-center m10`}>
                         <p>Plongez dans l'univers des recettes cosmétiques à base de lait maternel spécialement conçues pour les tout-petits sur notre site dédié ! Nous mettons en avant les vertus exceptionnelles du lait maternel pour la peau délicate des bébés. Notre plateforme propose une approche douce et naturelle, offrant les bienfaits du lait maternel non seulement aux tout-petits, mais aussi aux adultes. Découvrez nos recettes innovantes qui utilisent les propriétés apaisantes et nourrissantes du lait maternel pour prendre soin de la peau de votre bébé. Offrez à votre enfant une expérience de soin naturelle et bienveillante, grâce à nos produits cosmétiques riches en nutriments bienfaisants.</p>
                         <img src={intro} alt="" />
@@ -54,12 +55,12 @@ function Homepage() {
                         <img src={bebe2} alt="" />
                         <img src={bebe3} alt="" />
                     </article>
-                    <h2>Les bienfaits du lait maternel</h2>
+                    <h2>Les &ensp; bienfaits &ensp; du &ensp; lait &ensp;  maternel</h2>
                 </section>
-                <section className={`${styles.bienfaits}  mb20`}>
+                <section className={`${styles.bienfaits}`}>
                     <article className={`${styles.bienfaitsArticle} d-flex  justify-content-center align-items-center  flex-wrap m10`}>
                         <img src={bienfaits} alt="" />
-                        <div className={`${styles.bienfaitsTexte} d-flex flex-column justify-content-center align-items-cente`}>
+                        <div className={`${styles.bienfaitsTexte} d-flex flex-column justify-content-center align-items-center`}>
                             <p>Nous vous proposons une variété de recettes  pour vous permettre de créer vos propres soins naturels à base de lait maternel. Des baumes hydratants aux lotions apaisantes, en passant par les masques nourrissants, vous aurez la possibilité de personnaliser les produits selon les besoins spécifiques de votre bébé.</p>
                             <NavLink to="/recettes">
                                 <button className="btn btn-primary-reverse">Découvrir</button>
@@ -67,7 +68,8 @@ function Homepage() {
                         </div>
                     </article>
                 </section>
-                <section className="eBook">
+                <section className={`${styles.eBook}`}>
+                    <Carrousel />
                 </section>
 
             </main>
